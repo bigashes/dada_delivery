@@ -23,9 +23,9 @@ func TestAddOrder(t *testing.T) {
 		ReceiverAddress: "青岛市市北区卓越世纪中心1号楼",
 		ReceiverLat:     36.087430,
 		ReceiverLng:     120.374790,
-		Callback:        "https://ccdff.fyyang.com",
+		Callback:        "https://1995er.com/n/dada",
 		CargoWeight:     1,
-		ReceiverPhone:   "15906398085",
+		ReceiverPhone:   "13122223333",
 	})
 
 	if err != nil {
