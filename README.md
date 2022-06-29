@@ -49,9 +49,13 @@ order, err := client.AddOrder(AddOrder{
 - 获取充值链接 Recharge
 - 查询余额 QueryBalance
 
-## 回调
+## 回调验证签名
 ```
+client := NewClient(Config{})
+//请求体
 result, err := client.OrderNotify(req)
+//结构体
+result, err := client.OrderNotifyData(req)
 ```
 # License
 This project is licensed under the MIT License.
