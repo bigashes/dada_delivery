@@ -17,7 +17,7 @@ func (c *Client) Recharge(param Recharge) (result string, err error) {
 	return result, err
 }
 
-//获取充值链接 https://newopen.imdada.cn/#/development/file/recharge
+//查询余额 https://newopen.imdada.cn/#/development/file/balanceQuery
 func (c *Client) QueryBalance(param QueryBalance) (result *QueryBalanceRsp, err error) {
 
 	bodyJson, err := json.Marshal(param)

@@ -25,7 +25,7 @@ func (c *Client) AddMerchant(param AddMerchant) (result *AddMerchantRsp, err err
 	return result, err
 }
 
-//注册商户 https://newopen.imdada.cn/#/development/file/merchantAdd
+//新增门店 https://newopen.imdada.cn/#/development/file/shopAdd
 func (c *Client) AddShop(param []*AddShop) (result *AddShopResp, err error) {
 
 	bodyJson, err := json.Marshal(param)
@@ -49,7 +49,7 @@ func (c *Client) UpdateShop(param UpdateShop) (result *UpdateShopResp, err error
 	return result, err
 }
 
-//编辑门店 https://newopen.imdada.cn/#/development/file/shopDetail
+//门店详情 https://newopen.imdada.cn/#/development/file/shopDetail
 func (c *Client) QueryShop(param QueryShop) (result *QueryShopRsp, err error) {
 
 	bodyJson, err := json.Marshal(param)
