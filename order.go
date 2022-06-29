@@ -154,7 +154,7 @@ func (c *Client) ConfirmGoods(param ConfirmGoods) (result *ConfirmGoodsRsp, err 
 }
 
 // 订单回调 https://newopen.imdada.cn/#/development/file/order
-func (c Client) OrderNotify(req *http.Request) (result *OrderNotify, err error) {
+func (c *Client) OrderNotify(req *http.Request) (result *OrderNotify, err error) {
 	result = &OrderNotify{}
 
 	body, err := io.ReadAll(req.Body)
@@ -176,4 +176,18 @@ func (c Client) OrderNotify(req *http.Request) (result *OrderNotify, err error) 
 	}
 
 	return result, err
+}
+
+// 订单回调 https://newopen.imdada.cn/#/development/file/order
+func (c *Client) OrderNotifyData(req OrderNotify) (result *OrderNotify, err error) {
+
+	var params []string
+	params = append(params, req.ClientId, req.OrderId, strconv.FormatInt(req.UpdateTime, 10))
+
+	err = util.CallbackSign(params, result.Signature)
+	if err != nil {
+		return nil, err
+	}
+
+	return &req, err
 }
