@@ -184,7 +184,7 @@ func (c *Client) OrderNotifyData(req OrderNotify) (result *OrderNotify, err erro
 	var params []string
 	params = append(params, req.ClientId, req.OrderId, strconv.FormatInt(req.UpdateTime, 10))
 
-	err = util.CallbackSign(params, result.Signature)
+	err = util.CallbackSign(params, req.Signature)
 	if err != nil {
 		return nil, err
 	}
